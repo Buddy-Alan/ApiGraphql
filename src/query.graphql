@@ -47,3 +47,31 @@ query{
       codigo
     }
   }}
+
+
+
+Para agregar un producto usando "addProduct"
+
+mutation {
+  addProduct(product:{
+        title:"CUADERNO AVON A4",
+        price:600,
+        thumbnail: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/240/419/products/100782-100783-101019-101020-baja-buenos-aires1-c6acb885bf712dd6c815930400108976-640-0.png",
+        descripcion:"CUADERNO AVON A4 ESPIRAL 84 HJS",
+        stock: 10,
+        codigo:"CA01"
+  }){
+    Message,
+    Producto {
+      _id,
+      title,
+      price,
+      descripcion
+    }
+  }
+}
+
+Para eliminar un producto usando "deleteProductById"
+mutation {
+  deleteProductById(_id:"id del producto a eliminar")
+}
